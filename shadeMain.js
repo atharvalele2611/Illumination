@@ -41,16 +41,6 @@ function bindVAO(shape, program) {
   // stored in this array.
 
   //create and bind VAO
-  let vao = bind(shape,program);
-  // Do cleanup
-  // Clean
-  doCleanUp()
-  // return the VAO
-  return vao;
-  
-}
-
-function bind(shape,program){
   let vao = gl.createVertexArray()
   gl.bindVertexArray(vao);
 
@@ -89,6 +79,12 @@ function bind(shape,program){
     new Uint16Array(shape.indices),
     gl.STATIC_DRAW
   );
+  // Do cleanup
+  // Clean
+  doCleanUp()
+  // return the VAO
+  return vao;
+  
 }
 
 function doCleanUp(){
