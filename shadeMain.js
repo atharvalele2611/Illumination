@@ -81,17 +81,18 @@ function bindVAO(shape, program) {
   );
   // Do cleanup
   // Clean
-  doCleanUp();
+  gl.bindVertexArray(null);
+  gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, null);
+  gl.bindBuffer(gl.NORMAL_ARRAY_BUFFER, null);
+  gl.bindBuffer(gl.ARRAY_BUFFER, null);
+  // doCleanUp();
   // return the VAO
   return vao;
   
 }
 
 function doCleanUp(){
-  gl.bindVertexArray(null);
-  gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, null);
-  gl.bindBuffer(gl.NORMAL_ARRAY_BUFFER, null);
-  gl.bindBuffer(gl.ARRAY_BUFFER, null);
+  
 }
 
 //
