@@ -41,12 +41,6 @@ function bindVAO(shape, program) {
   // stored in this array.
 
   //create and bind VAO
-  let vao = bindBuffers(shape,program);
-  cleanBuffers();
-  return vao;
-}
-
-function bindBuffers(shape,program){
   let vao = gl.createVertexArray()
   gl.bindVertexArray(vao);
 
@@ -85,10 +79,15 @@ function bindBuffers(shape,program){
     new Uint16Array(shape.indices),
     gl.STATIC_DRAW
   );
+  // Do cleanup
+  // Clean
+  doCleanUp();
+  // return the VAO
   return vao;
+  
 }
 
-function cleanBuffers(){
+function doCleanUp(){
   gl.bindVertexArray(null);
   gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, null);
   gl.bindBuffer(gl.NORMAL_ARRAY_BUFFER, null);
@@ -127,6 +126,7 @@ function setUpPhong(program) {
 function setUniform1(program,setting){
   gl.uniform1f(program,setting)
 }
+
 
 function setUniform3(program,setting){
   gl.uniform3fv(program,setting)
