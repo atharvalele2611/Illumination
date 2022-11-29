@@ -41,7 +41,7 @@ function bindVAO(shape, program) {
   // stored in this array.
 
   //create and bind VAO
-  let vao = gl.createVertexArray()
+  let vao = gl.createVertexArray();
   gl.bindVertexArray(vao);
 
   // create and bind vertex buffer
